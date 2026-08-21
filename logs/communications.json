@@ -1,0 +1,135 @@
+[
+  {
+    "from": "koala_orchestrator",
+    "to": "hr_agent",
+    "action": "create_job_posting",
+    "status": "success",
+    "timestamp": 1787296245.2380872
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "hr_agent",
+    "action": "create_job_posting",
+    "status": "success",
+    "timestamp": 1787296314.206614
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "hr_agent",
+    "action": "create_job_posting",
+    "status": "success",
+    "timestamp": 1787296379.5131204
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "finance_agent",
+    "action": "check_budget",
+    "status": "success",
+    "timestamp": 1787296379.5691602
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "it_agent",
+    "action": "provision_hardware",
+    "status": "success",
+    "timestamp": 1787296379.6609828
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "hr_agent",
+    "action": "create_job_posting",
+    "status": "success",
+    "timestamp": 1787297222.1961308
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "finance_agent",
+    "action": "check_budget",
+    "status": "success",
+    "timestamp": 1787297222.2097876
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "it_agent",
+    "action": "provision_hardware",
+    "status": "success",
+    "timestamp": 1787297222.2274568
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "hr_agent",
+    "action": "create_job_posting",
+    "status": "success",
+    "timestamp": 1787298896.3993778
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "finance_agent",
+    "action": "check_budget",
+    "status": "success",
+    "timestamp": 1787298896.4271896
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "it_agent",
+    "action": "provision_hardware",
+    "status": "success",
+    "timestamp": 1787298896.469486
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "it_agent",
+    "action": "setup_software",
+    "status": "success",
+    "timestamp": 1787299004.6217337
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "it_agent",
+    "action": "setup_software",
+    "status": "success",
+    "timestamp": 1787299004.643105
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "it_agent",
+    "action": "provision_hardware",
+    "status": "success",
+    "timestamp": 1787299004.6820643
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "finance_agent",
+    "action": "approve_expense",
+    "status": "success",
+    "timestamp": 1787299553.5914824
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "hr_agent",
+    "action": "create_job_posting",
+    "status": "success",
+    "timestamp": 1787299999.868491
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "finance_agent",
+    "action": "check_budget",
+    "status": "success",
+    "timestamp": 1787299999.893551
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "it_agent",
+    "action": "provision_hardware",
+    "status": "success",
+    "timestamp": 1787299999.9406862
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "it_agent",
+    "action": "setup_software",
+    "status": "success",
+    "timestamp": 1787299999.9736545
+  }
+]

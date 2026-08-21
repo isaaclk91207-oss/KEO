@@ -1,0 +1,65 @@
+[
+  {
+    "text_preview": "Hire a Senior Developer, budget $150K, need MacBook Pro",
+    "pii_found": [],
+    "action_taken": "allowed",
+    "timestamp": 1787296177.7834897,
+    "datetime": "2026-08-21T13:39:37.783494"
+  },
+  {
+    "text_preview": "Hire a Senior Developer, budget $150K, need MacBook Pro",
+    "pii_found": [],
+    "action_taken": "allowed",
+    "timestamp": 1787296220.4747753,
+    "datetime": "2026-08-21T13:40:20.474779"
+  },
+  {
+    "text_preview": "Hire a Senior Developer, budget $150K, need MacBook Pro",
+    "pii_found": [],
+    "action_taken": "allowed",
+    "timestamp": 1787296295.2690942,
+    "datetime": "2026-08-21T13:41:35.269099"
+  },
+  {
+    "text_preview": "Hire a Senior Developer, budget $150K, need MacBook Pro",
+    "pii_found": [],
+    "action_taken": "allowed",
+    "timestamp": 1787296354.404567,
+    "datetime": "2026-08-21T13:42:34.404571"
+  },
+  {
+    "text_preview": "Hire a Senior Developer, budget $150K, need MacBook Pro",
+    "pii_found": [],
+    "action_taken": "allowed",
+    "timestamp": 1787297162.214319,
+    "datetime": "2026-08-21T13:56:02.214321"
+  },
+  {
+    "text_preview": "hire a senoir developer, budget 100K ,macbook pro M1",
+    "pii_found": [],
+    "action_taken": "allowed",
+    "timestamp": 1787298867.1465442,
+    "datetime": "2026-08-21T14:24:27.146547"
+  },
+  {
+    "text_preview": "Onboard new employee: create ID, setup email, order laptop",
+    "pii_found": [],
+    "action_taken": "allowed",
+    "timestamp": 1787298986.1924856,
+    "datetime": "2026-08-21T14:26:26.192488"
+  },
+  {
+    "text_preview": "Request budget approval for marketing campaign $50K",
+    "pii_found": [],
+    "action_taken": "allowed",
+    "timestamp": 1787299524.9224534,
+    "datetime": "2026-08-21T14:35:24.922455"
+  },
+  {
+    "text_preview": "We are hiring a Senior Cloud engineer for the DevOps team.Please initiate the onboarding workflow: P",
+    "pii_found": [],
+    "action_taken": "allowed",
+    "timestamp": 1787299976.1119955,
+    "datetime": "2026-08-21T14:42:56.111999"
+  }
+]

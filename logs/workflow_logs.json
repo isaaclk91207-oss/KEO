@@ -1,0 +1,141 @@
+[
+  {
+    "workflow_id": "fc0df5d8",
+    "user_input": "Hire a Senior Developer, budget $150K, need MacBook Pro",
+    "tasks": [
+      {
+        "dept": "hr",
+        "action": "create_job_posting",
+        "status": "complete"
+      },
+      {
+        "dept": "finance",
+        "action": "check_budget",
+        "status": "complete"
+      },
+      {
+        "dept": "it",
+        "action": "provision_hardware",
+        "status": "complete"
+      }
+    ],
+    "status": "complete",
+    "timestamp": 1787296379.7640471,
+    "datetime": "2026-08-21T13:42:59.764050"
+  },
+  {
+    "workflow_id": "578fa4ee",
+    "user_input": "Hire a Senior Developer, budget $150K, need MacBook Pro",
+    "tasks": [
+      {
+        "dept": "hr",
+        "action": "create_job_posting",
+        "status": "complete"
+      },
+      {
+        "dept": "finance",
+        "action": "check_budget",
+        "status": "complete"
+      },
+      {
+        "dept": "it",
+        "action": "provision_hardware",
+        "status": "complete"
+      }
+    ],
+    "status": "complete",
+    "timestamp": 1787297222.2487254,
+    "datetime": "2026-08-21T13:57:02.248727"
+  },
+  {
+    "workflow_id": "f423b912",
+    "user_input": "hire a senoir developer, budget 100K ,macbook pro M1",
+    "tasks": [
+      {
+        "dept": "hr",
+        "action": "create_job_posting",
+        "status": "complete"
+      },
+      {
+        "dept": "finance",
+        "action": "check_budget",
+        "status": "complete"
+      },
+      {
+        "dept": "it",
+        "action": "provision_hardware",
+        "status": "complete"
+      }
+    ],
+    "status": "complete",
+    "timestamp": 1787298896.4973724,
+    "datetime": "2026-08-21T14:24:56.497374"
+  },
+  {
+    "workflow_id": "4905e903",
+    "user_input": "Onboard new employee: create ID, setup email, order laptop",
+    "tasks": [
+      {
+        "dept": "it",
+        "action": "setup_software",
+        "status": "complete"
+      },
+      {
+        "dept": "it",
+        "action": "setup_software",
+        "status": "complete"
+      },
+      {
+        "dept": "it",
+        "action": "provision_hardware",
+        "status": "complete"
+      }
+    ],
+    "status": "complete",
+    "timestamp": 1787299004.7944458,
+    "datetime": "2026-08-21T14:26:44.794449"
+  },
+  {
+    "workflow_id": "f7171264",
+    "user_input": "Request budget approval for marketing campaign $50K",
+    "tasks": [
+      {
+        "dept": "finance",
+        "action": "approve_expense",
+        "status": "complete"
+      }
+    ],
+    "status": "complete",
+    "timestamp": 1787299553.6083963,
+    "datetime": "2026-08-21T14:35:53.608398"
+  },
+  {
+    "workflow_id": "7ad22884",
+    "user_input": "We are hiring a Senior Cloud engineer for the DevOps team.Please initiate the onboarding workflow: Post the job description,set up an intial budget of 120k, and reqyest a Macbook Pro setup with cloud permissions.",
+    "tasks": [
+      {
+        "dept": "hr",
+        "action": "create_job_posting",
+        "status": "complete"
+      },
+      {
+        "dept": "finance",
+        "action": "check_budget",
+        "status": "complete"
+      },
+      {
+        "dept": "it",
+        "action": "provision_hardware",
+        "status": "complete"
+      },
+      {
+        "dept": "it",
+        "action": "setup_software",
+        "status": "complete"
+      }
+    ],
+    "status": "complete",
+    "timestamp": 1787300000.0105474,
+    "datetime": "2026-08-21T14:43:20.010549"
+  }
+]

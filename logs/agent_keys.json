@@ -1,0 +1,6 @@
+{
+  "koala_orchestrator": "orch_key_001",
+  "hr_agent": "hr_key_001",
+  "finance_agent": "finance_key_001",
+  "it_agent": "it_key_001"
+}
