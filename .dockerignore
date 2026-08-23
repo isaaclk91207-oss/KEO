@@ -1,0 +1,14 @@
+venv/
+.env
+.git/
+.gitignore
+logs/
+__pycache__/
+*.pyc
+*.pyo
+*.log
+.DS_Store
+README.md
+story.md
+koala-fleet-technical-plan.md
+setup.ps1
