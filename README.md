@@ -1,4 +1,4 @@
-# Koala Fleet 🐨
+# koala Fleet 🐨
 
 > Cross-Department AI Agent Orchestration for Enterprise
 
