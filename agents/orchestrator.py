@@ -7,7 +7,7 @@ class Orchestrator:
     def __init__(self):
         self.agent = Agent(
             name="koala_orchestrator",
-            model="gemini-3.6-pro",
+            model="gemini-2.5-pro",
             description="Central orchestrator for cross-department coordination",
             instruction="""You are the Koala Fleet orchestrator.
 Parse user requests, decompose into sub-tasks, and route to department agents."""

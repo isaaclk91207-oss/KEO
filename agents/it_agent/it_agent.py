@@ -5,7 +5,7 @@ class ITAgent:
     def __init__(self):
         self.agent = Agent(
             name="it_agent",
-            model="gemini-3.6-flash",
+            model="gemini-2.5-flash",
             description="IT department agent for hardware and infrastructure",
             instruction="""You are the IT agent. Handle hardware provisioning,
 software setup, and infrastructure requests."""

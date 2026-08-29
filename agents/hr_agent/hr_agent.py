@@ -5,7 +5,7 @@ class HRAgent:
     def __init__(self):
         self.agent = Agent(
             name="hr_agent",
-            model="gemini-3.6-flash",
+            model="gemini-2.5-flash",
             description="HR department agent for job postings and candidate management",
             instruction="""You are the HR agent. Handle job postings, candidate screening,
 and employee onboarding tasks."""

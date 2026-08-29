@@ -6,7 +6,7 @@ class FinanceAgent:
         # Initialize the agent with name, model, description, and instruction prompt
         self.agent = Agent(
             name="finance_agent",
-            model="gemini-3.6-flash",
+            model="gemini-2.5-flash",
             description="Finance department agent for budget and procurement",
             instruction="""You are the Finance agent. Handle budget validation,
 cost approvals, and financial operations."""

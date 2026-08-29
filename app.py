@@ -1,6 +1,7 @@
 import streamlit as st
 import sys
 import os
+import io
 
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -8,6 +9,22 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from main import run_workflow
 from config.model_armor import create_model_armor
 from config.audit_logger import create_audit_logger
+
+
+class LogCapture:
+    """Captures print() output for display in Streamlit."""
+    def __init__(self):
+        self.buffer = io.StringIO()
+
+    def write(self, text):
+        if text.strip():
+            self.buffer.write(text + "\n")
+
+    def get_logs(self):
+        return self.buffer.getvalue()
+
+    def clear(self):
+        self.buffer = io.StringIO()
 
 # Page config
 st.set_page_config(
@@ -127,65 +144,79 @@ with tab1:
                 status_placeholder = st.empty()
                 results_placeholder = st.empty()
                 
+                # Capture print output
+                log_capture = LogCapture()
+                old_stdout = sys.stdout
+                sys.stdout = log_capture
+                
                 # Run workflow
                 try:
                     result = run_workflow(user_input)
+                finally:
+                    sys.stdout = old_stdout
+                
+                # Display results
+                if result["status"] == "blocked":
+                    st.error(f"🚫 **Workflow Blocked:** {result.get('reason', 'PII Detected')}")
+                else:
+                    st.success(f"✅ **Workflow Complete** (ID: {result.get('workflow_id', 'N/A')})")
                     
-                    # Display results
-                    if result["status"] == "blocked":
-                        st.error(f"🚫 **Workflow Blocked:** {result.get('reason', 'PII Detected')}")
-                    else:
-                        st.success(f"✅ **Workflow Complete** (ID: {result.get('workflow_id', 'N/A')})")
+                    # Agent status cards
+                    st.subheader("🤖 Agent Status")
+                    cols = st.columns(3)
+                    
+                    with cols[0]:
+                        st.markdown("""
+                        <div class="agent-card">
+                            <h3>👤 HR Agent</h3>
+                            <hr>
+                            <p>Job Postings</p>
+                        </div>
+                        """, unsafe_allow_html=True)
+                    
+                    with cols[1]:
+                        st.markdown("""
+                        <div class="agent-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <h3>💰 Finance Agent</h3>
+                            <hr>
+                            <p>Budget & Expenses</p>
+                        </div>
+                        """, unsafe_allow_html=True)
+                    
+                    with cols[2]:
+                        st.markdown("""
+                        <div class="agent-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <h3>💻 IT Agent</h3>
+                            <hr>
+                            <p>Hardware & Software</p>
+                        </div>
+                        """, unsafe_allow_html=True)
+                    
+                    # Detailed results
+                    st.subheader("📊 Results")
+                    
+                    for task in result.get("results", []):
+                        dept = task.department.value.upper()
                         
-                        # Agent status cards
-                        st.subheader("🤖 Agent Status")
-                        cols = st.columns(3)
-                        
-                        with cols[0]:
-                            st.markdown("""
-                            <div class="agent-card">
-                                <h3>👤 HR Agent</h3>
-                                <hr>
-                                <p>Job Postings</p>
-                            </div>
-                            """, unsafe_allow_html=True)
-                        
-                        with cols[1]:
-                            st.markdown("""
-                            <div class="agent-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                                <h3>💰 Finance Agent</h3>
-                                <hr>
-                                <p>Budget & Expenses</p>
-                            </div>
-                            """, unsafe_allow_html=True)
-                        
-                        with cols[2]:
-                            st.markdown("""
-                            <div class="agent-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                                <h3>💻 IT Agent</h3>
-                                <hr>
-                                <p>Hardware & Software</p>
-                            </div>
-                            """, unsafe_allow_html=True)
-                        
-                        # Detailed results
-                        st.subheader("📊 Results")
-                        
-                        for task in result.get("results", []):
-                            dept = task.department.value.upper()
+                        with st.expander(f"**{dept} Agent** — {task.action}", expanded=True):
+                            st.write(f"**Status:** {task.status}")
                             
-                            with st.expander(f"**{dept} Agent** — {task.action}", expanded=True):
-                                st.write(f"**Status:** {task.status}")
-                                
-                                if task.result:
-                                    for key, value in task.result.items():
-                                        if key == "posting":
-                                            st.markdown("**Generated Job Posting:**")
-                                            st.text_area("Job Posting", value, height=200, disabled=True, key=f"posting_{dept}")
-                                        else:
-                                            st.write(f"**{key}:** {value}")
-                except Exception as e:
-                    st.error(f"Error: {str(e)}")
+                            if task.result:
+                                for key, value in task.result.items():
+                                    if key == "posting":
+                                        st.markdown("**Generated Job Posting:**")
+                                        st.text_area("Job Posting", value, height=200, disabled=True, key=f"posting_{dept}")
+                                    else:
+                                        st.write(f"**{key}:** {value}")
+                
+                # Live Workflow Logs panel
+                st.divider()
+                with st.expander("📋 Live Workflow Logs", expanded=True):
+                    logs = log_capture.get_logs()
+                    if logs:
+                        st.code(logs, language=None)
+                    else:
+                        st.info("No logs captured.")
         else:
             st.warning("⚠️ Please enter a request")
 

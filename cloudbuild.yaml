@@ -1,0 +1,30 @@
+steps:
+  # Build the Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/koala-fleet', '.']
+  
+  # Push the image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/koala-fleet']
+  
+  # Deploy to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    args:
+      - run
+      - deploy
+      - koala-fleet
+      - --image
+      - gcr.io/$PROJECT_ID/koala-fleet
+      - --region
+      - us-central1
+      - --platform
+      - managed
+      - --allow-unauthenticated
+      - --set-env-vars
+      - GOOGLE_API_KEY=$GOOGLE_API_KEY
+
+images:
+  - 'gcr.io/$PROJECT_ID/koala-fleet'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
