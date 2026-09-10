@@ -10,7 +10,7 @@ class GeminiClient:
             raise ValueError("GOOGLE_API_KEY not set in .env")
         self.client = genai.Client(api_key=api_key)
     
-    def generate(self, prompt, model="gemini-2.5-flash", retries=3):
+    def generate(self, prompt, model="gemini-2.0-flash", retries=3):
         """Generate response from Gemini with retry"""
         for attempt in range(retries):
             try:
@@ -26,7 +26,7 @@ class GeminiClient:
                 else:
                     raise
     
-    def generate_json(self, prompt, model="gemini-2.5-flash", retries=3):
+    def generate_json(self, prompt, model="gemini-2.0-flash", retries=3):
         """Generate structured JSON response with retry"""
         for attempt in range(retries):
             try:
