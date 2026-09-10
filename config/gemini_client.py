@@ -34,11 +34,13 @@ class GeminiClient:
                     model=model,
                     contents=prompt,
                     config=types.GenerateContentConfig(
-                        response_mime_type="application/json"
+                        response_mime_type="application/json",
+                        response_schema=list
                     )
                 )
                 return response.text
             except Exception as e:
+                print(f"    [Gemini Error] {type(e).__name__}: {e}")
                 if "503" in str(e) and attempt < retries - 1:
                     print(f"    [Retry {attempt + 1}/{retries}] API busy, waiting...")
                     time.sleep(2 ** attempt)
