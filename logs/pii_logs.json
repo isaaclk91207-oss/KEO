@@ -75,5 +75,12 @@
     "action_taken": "allowed",
     "timestamp": 1787818460.879698,
     "datetime": "2026-08-27T14:44:20.879845"
+  },
+  {
+    "text_preview": "Hire a Senior Developer, budget $150K, need MacBook Pro",
+    "pii_found": [],
+    "action_taken": "allowed",
+    "timestamp": 1789051724.642556,
+    "datetime": "2026-09-10T21:18:44.642568"
   }
 ]

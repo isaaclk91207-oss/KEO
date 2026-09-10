@@ -131,5 +131,26 @@
     "action": "setup_software",
     "status": "success",
     "timestamp": 1787299999.9736545
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "hr_agent",
+    "action": "create_job_posting",
+    "status": "success",
+    "timestamp": 1789051747.857352
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "finance_agent",
+    "action": "check_budget",
+    "status": "success",
+    "timestamp": 1789051747.914894
+  },
+  {
+    "from": "koala_orchestrator",
+    "to": "it_agent",
+    "action": "provision_hardware",
+    "status": "success",
+    "timestamp": 1789051747.968233
   }
 ]

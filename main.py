@@ -1,13 +1,27 @@
 ﻿import os
 import uuid
-from dotenv import load_dotenv
+
+# Fallback to python-dotenv for local development (load first)
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
+# Handle environment variables for Streamlit Community Cloud
+if not os.getenv("GOOGLE_API_KEY"):
+    try:
+        import streamlit as st
+        os.environ["GOOGLE_API_KEY"] = st.secrets.get("GOOGLE_API_KEY", "")
+        os.environ.setdefault("GOOGLE_CLOUD_PROJECT", st.secrets.get("GOOGLE_CLOUD_PROJECT", ""))
+    except Exception:
+        pass
+
 from agents.orchestrator import create_orchestrator
 from agents.registry import create_registry
 from config.model_armor import create_model_armor
 from config.agent_gateway import create_gateway
 from config.audit_logger import create_audit_logger
-
-load_dotenv()
 
 def run_workflow(user_input):
     """Run complete workflow with security"""

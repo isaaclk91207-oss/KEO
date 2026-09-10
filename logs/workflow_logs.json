@@ -153,5 +153,29 @@
     "status": "complete",
     "timestamp": 1787818465.7103884,
     "datetime": "2026-08-27T14:44:25.710416"
+  },
+  {
+    "workflow_id": "e6bce828",
+    "user_input": "Hire a Senior Developer, budget $150K, need MacBook Pro",
+    "tasks": [
+      {
+        "dept": "hr",
+        "action": "create_job_posting",
+        "status": "complete"
+      },
+      {
+        "dept": "finance",
+        "action": "check_budget",
+        "status": "complete"
+      },
+      {
+        "dept": "it",
+        "action": "provision_hardware",
+        "status": "complete"
+      }
+    ],
+    "status": "complete",
+    "timestamp": 1789051748.049963,
+    "datetime": "2026-09-10T21:19:08.049968"
   }
 ]

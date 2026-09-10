@@ -169,5 +169,32 @@
     "status": "success",
     "timestamp": 1787299999.9897766,
     "datetime": "2026-08-21T14:43:19.989778"
+  },
+  {
+    "agent": "hr_agent",
+    "action": "create_job_posting",
+    "input": "{'role': 'Senior Developer'}",
+    "result": "{'status': 'complete', 'posting': '**Job Title:** Senior Software Developer\\n\\n**About the Role:**\\nWe are seeking a highly skilled and motivated Senior Software Developer to join our growing engineering team. In this role, you will play a key part in designing, building, and scaling our core software solutions while mentoring team members and driving engineering excellence.\\n\\n### **Responsibilities:**\\n* **Architect & Build:** Design, develop, and maintain efficient, scalable, and reliable cod",
+    "status": "success",
+    "timestamp": 1789051747.90751,
+    "datetime": "2026-09-10T21:19:07.907514"
+  },
+  {
+    "agent": "finance_agent",
+    "action": "check_budget",
+    "input": "{'amount': None}",
+    "result": "{'status': 'complete', 'approved': True, 'amount': 0, 'limit': 200000, 'message': 'Budget approved'}",
+    "status": "success",
+    "timestamp": 1789051747.9309056,
+    "datetime": "2026-09-10T21:19:07.930911"
+  },
+  {
+    "agent": "it_agent",
+    "action": "provision_hardware",
+    "input": "{'device': 'MacBook Pro'}",
+    "result": "{'status': 'complete', 'order_id': 'ORD-5955', 'device': 'Macbook Pro', 'specs': 'M3 Pro, 18GB RAM, 512GB SSD', 'price': 2499}",
+    "status": "success",
+    "timestamp": 1789051748.0028257,
+    "datetime": "2026-09-10T21:19:08.002829"
   }
 ]
