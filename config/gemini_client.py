@@ -12,13 +12,17 @@ class GeminiClient:
                 api_key = st.secrets.get("GOOGLE_API_KEY", "")
                 if api_key:
                     os.environ["GOOGLE_API_KEY"] = api_key
-            except Exception:
-                pass
+            except Exception as e:
+                print(f"[Secrets Error] {e}")
         if not api_key:
-            raise ValueError("GOOGLE_API_KEY not set. Add it to Streamlit secrets or .env")
+            raise ValueError(
+                "GOOGLE_API_KEY not set. "
+                "Add it to Streamlit secrets as: GOOGLE_API_KEY = \"your_key\" "
+                "(with quotes!) or set it in .env"
+            )
         self.client = genai.Client(api_key=api_key)
     
-    def generate(self, prompt, model="gemini-2.0-flash", retries=3):
+    def generate(self, prompt, model="gemini-3.6-flash", retries=3):
         """Generate response from Gemini with retry"""
         for attempt in range(retries):
             try:
@@ -34,7 +38,7 @@ class GeminiClient:
                 else:
                     raise
     
-    def generate_json(self, prompt, model="gemini-2.0-flash", retries=3):
+    def generate_json(self, prompt, model="gemini-3.6-flash", retries=3):
         """Generate response and parse as JSON"""
         for attempt in range(retries):
             try:
