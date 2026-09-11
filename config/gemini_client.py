@@ -27,16 +27,12 @@ class GeminiClient:
                     raise
     
     def generate_json(self, prompt, model="gemini-2.0-flash", retries=3):
-        """Generate structured JSON response with retry"""
+        """Generate response and parse as JSON"""
         for attempt in range(retries):
             try:
                 response = self.client.models.generate_content(
                     model=model,
-                    contents=prompt,
-                    config=types.GenerateContentConfig(
-                        response_mime_type="application/json",
-                        response_schema=list
-                    )
+                    contents=prompt
                 )
                 return response.text
             except Exception as e:
