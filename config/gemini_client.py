@@ -7,7 +7,15 @@ class GeminiClient:
     def __init__(self):
         api_key = os.getenv("GOOGLE_API_KEY")
         if not api_key:
-            raise ValueError("GOOGLE_API_KEY not set in .env")
+            try:
+                import streamlit as st
+                api_key = st.secrets.get("GOOGLE_API_KEY", "")
+                if api_key:
+                    os.environ["GOOGLE_API_KEY"] = api_key
+            except Exception:
+                pass
+        if not api_key:
+            raise ValueError("GOOGLE_API_KEY not set. Add it to Streamlit secrets or .env")
         self.client = genai.Client(api_key=api_key)
     
     def generate(self, prompt, model="gemini-2.0-flash", retries=3):

@@ -3,6 +3,18 @@ import sys
 import os
 import io
 
+# Load secrets FIRST - before any imports that use the API key
+if not os.getenv("GOOGLE_API_KEY"):
+    try:
+        os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
+    except Exception:
+        pass
+if not os.getenv("GOOGLE_CLOUD_PROJECT"):
+    try:
+        os.environ["GOOGLE_CLOUD_PROJECT"] = st.secrets["GOOGLE_CLOUD_PROJECT"]
+    except Exception:
+        pass
+
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
